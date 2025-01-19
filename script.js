@@ -13,20 +13,27 @@ function clearactiveclasses(){
 
 let allslides=document.getElementsByClassName("slide")
 let navlinks=document.getElementsByClassName("slidernav")
-let currentslides=0
+let currentslide=0
 document.getElementById("navbuttonprev").addEventListener("click", ()=>{
-    changeslide(currentslides-1)
+    changeslide(currentslide-1)
 })
 document.getElementById("navbuttonnext").addEventListener("click", ()=>{
-    changeslide(currentslides+1)
+    changeslide(currentslide+1)
 })
 
 function changeslide(moveto){
     if(moveto>4){moveto=0}
     if(moveto<0){moveto=4}
-    allslides[currentslides].classList.toggle("active")
-    navlinks[currentslides].classList.toggle("active")
+    allslides[currentslide].classList.toggle("active")
+    navlinks[currentslide].classList.toggle("active")
     allslides[moveto].classList.toggle("active")
     navlinks[moveto].classList.toggle("active")
-    currentslides=moveto
+    currentslide=moveto
 }
+document.querySelectorAll(".slidernavlink").forEach((bullet, bulletindex)=>{
+    bullet.addEventListener("click",()=>{
+        if(currentslide!==bulletindex){
+            changeslide(bulletindex)
+        }
+    })
+})
