@@ -12,7 +12,7 @@ function clearactiveclasses(){
 }
 
 let allslides=document.getElementsByClassName("slide")
-let navlinks=document.getElementsByClassName("slidernav")
+let navlinks=document.getElementsByClassName("slidernavlink")
 let currentslide=0
 document.getElementById("navbuttonprev").addEventListener("click", ()=>{
     changeslide(currentslide-1)

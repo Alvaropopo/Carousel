@@ -32,20 +32,23 @@ body{
 }
 .slide h3{
     position: absolute;
+    background: rgba(255, 255, 255, 0.299);
     font-size: 32px;
     bottom: 20px;
-    left: 20px;
+    left: 0px;
     margin: 0;
     opacity: 0;
+    padding-left: 20px;
+    padding-right: 20px;
 }
-.slide .active{
+.slide.active{
     flex: 10;
 }
-.slide .active h3{
+.slide.active h3{
     opacity: 1;
     transition: opacity .3s ease-in 0.4s;
 }
-.slidernav{
+.sliderbutton{
     position: absolute;
     height: 50px;
     width: 50px;
@@ -66,7 +69,7 @@ body{
 #navbuttonprev::after, #navbuttonnext::after{
     content: "";
     position: absolute;
-    border: solid white;
+    border: solid rgb(255, 255, 255);
     border-width: 0 4px 4px 0;
     display: inline-block;
     padding: 3px;
@@ -74,6 +77,11 @@ body{
     height: 40%;
 }
 #navbuttonnext::after{
+    top: 50%;
+    right: 80%;
+    transform: translate(75%, -50%) rotate(-45deg);
+}
+#navbuttonprev::after{
     top: 50%;
     right: 50%;
     transform: translate(75%, -50%) rotate(135deg);
